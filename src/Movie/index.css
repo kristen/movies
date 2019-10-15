@@ -42,6 +42,10 @@
     font-weight: 600;
     margin-bottom: 10px;
 }
+.movie-summary .title a {
+    text-decoration: none;
+    color: black;
+}
 .movie-summary .title .release-year {
     color: grey;
 }
