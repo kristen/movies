@@ -5,6 +5,7 @@
     --skeleton-right-width: 275px;
     --background-gradient: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px);
     --skeleton-animation: shine 2s infinite ease-out;
+    --movie-summary-width: 500px;
 }
 @keyframes shine {
     0% {
@@ -17,21 +18,13 @@
 }
 
 .movie-summary {
-    position: relative;
-    margin: 10px;
+    display: grid;
+    grid-template-columns: var(--movie-poster-width) calc(var(--movie-summary-width) - var(--movie-poster-width));
+    margin: 20px;
     border-radius: var(--border-radius);
-    max-width: 500px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.movie-summary .left {
-    /*position: absolute;*/
-    /*left: 0;*/
-    /*top: 0;*/
-}
 .movie-summary .right {
-    position: absolute;
-    left: var(--movie-poster-width);
-    top: 0;
     padding: 20px;
 }
 .movie-summary .poster {
@@ -46,7 +39,11 @@
 }
 .movie-summary .title {
     font-size: 18px;
+    font-weight: 600;
     margin-bottom: 10px;
+}
+.movie-summary .title .release-year {
+    color: grey;
 }
 .movie-summary .title.skeleton-title {
     width: var(--skeleton-right-width);
@@ -58,7 +55,7 @@
 }
 .movie-summary .overview.skeleton-overview {
     width: var(--skeleton-right-width);
-    height: 100px;
+    height: 135px;
     background-image: var(--background-gradient);
     animation: var(--skeleton-animation);
 }

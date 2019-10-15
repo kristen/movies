@@ -17,7 +17,7 @@ app.get('/status', (req, res) => {
 const apiKey = '?api_key=75b9387059d3bb6140f868f1a4c771ac';
 const baseUrl = 'https://api.themoviedb.org/3';
 
-const MAX_OVERVIEW_SUMMARY_LENGTH = 200;
+const MAX_OVERVIEW_SUMMARY_LENGTH = 300;
 const trimOverview = movie => {
     const overview = movie.overview;
     const trimmedOverview = overview.length > MAX_OVERVIEW_SUMMARY_LENGTH ?

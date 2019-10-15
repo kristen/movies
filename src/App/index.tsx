@@ -36,6 +36,7 @@ class App extends React.Component<Props, State> {
                 blankMovieSummary,
                 blankMovieSummary,
                 blankMovieSummary,
+                blankMovieSummary,
             ],
         };
         fetch('/movies/popular').then(response => response.json()).then(
@@ -50,9 +51,11 @@ class App extends React.Component<Props, State> {
         return (
             <div>
                 <h1>Popular Movies</h1>
-                {this.state.popularMovies
-                    .map(movie => <Movie {...movie} />)
-                }
+                <div className="popular-movies">
+                    {this.state.popularMovies
+                        .map(movie => <Movie {...movie} />)
+                    }
+                </div>
             </div>
         )
     }
