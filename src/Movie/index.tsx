@@ -1,5 +1,6 @@
 import React from 'react';
 import "./index.css";
+import StarRating from "../StarRating";
 
 export interface MovieSummary {
     poster_path: string|null;
@@ -17,7 +18,7 @@ export interface MovieSummary {
     vote_average: number;
 }
 
-const Movie: React.FC<MovieSummary> = ({poster_path, title, overview, release_date}) => {
+const Movie: React.FC<MovieSummary> = ({poster_path, title, overview, release_date, vote_average}) => {
     const releaseYear = (release_date.match(/^(\d{4})-\d{2}-\d{2}$/) || [, ""])[1];
     return (
         <div>
@@ -29,6 +30,7 @@ const Movie: React.FC<MovieSummary> = ({poster_path, title, overview, release_da
                     {title.length ?
                         <div className="title">{title} <span className="release-year">({releaseYear})</span></div> :
                         <div className="title skeleton-title"/>}
+                    <StarRating rating={vote_average} />
                     {overview.length ?
                         <div className="overview">{overview}</div> :
                         <div className="overview skeleton-overview" />}

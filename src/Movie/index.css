@@ -51,6 +51,9 @@
     background-image: var(--background-gradient);
     animation: var(--skeleton-animation);
 }
+.movie-summary .star-rating {
+    margin-bottom: 7px;
+}
 .movie-summary .overview {
 }
 .movie-summary .overview.skeleton-overview {
