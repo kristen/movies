@@ -17,11 +17,25 @@ app.get('/status', (req, res) => {
 const apiKey = '?api_key=75b9387059d3bb6140f868f1a4c771ac';
 const baseUrl = 'https://api.themoviedb.org/3';
 
+const MAX_OVERVIEW_SUMMARY_LENGTH = 200;
+const trimOverview = movie => {
+    const overview = movie.overview;
+    const trimmedOverview = overview.length > MAX_OVERVIEW_SUMMARY_LENGTH ?
+        `${overview.substring(0, MAX_OVERVIEW_SUMMARY_LENGTH)}...` :
+        overview;
+    return {...movie, overview: trimmedOverview};
+};
+const mapSummaryResponse = data => {
+    const results = data.results;
+    const updatedResults = results.map(trimOverview);
+    return {...data, results: updatedResults};
+};
+
 app.get('/movies/popular', (req, res, next) => {
     fetch(`${baseUrl}/movie/popular${apiKey}`)
         .then(res => res.json())
         .then(data => {
-            res.send(data);
+            res.send(mapSummaryResponse(data));
         })
         .catch(err => {
             next(err);

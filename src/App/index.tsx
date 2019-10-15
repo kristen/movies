@@ -1,5 +1,6 @@
 import React from 'react';
 import Movie, {MovieSummary} from "../Movie";
+import './index.css';
 
 interface Props {}
 

@@ -17,16 +17,27 @@ export interface MovieSummary {
     vote_average: number;
 }
 
-const Movie: React.FC<MovieSummary> = ({title, poster_path}) => {
+const Movie: React.FC<MovieSummary> = ({poster_path, title, overview}) => {
     return (
-        <div className="movie">
-            {title.length ?
-                <div className="title">{title}</div> :
-                <div className="title empty-title"/>}
-            {poster_path ?
-                <img className="poster" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${poster_path}`} alt=""/> :
-                <div className="poster empty-poster"/>}
+        <div>
+            <div className="movie-summary">
+                <div className="left">
+                    {poster_path ?
+                        <img className="poster" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${poster_path}`} alt=""/> :
+                        <div className="poster skeleton-poster"/>}
+                </div>
+                <div className="right">
+                    {title.length ?
+                        <div className="title">{title}</div> :
+                        <div className="title skeleton-title"/>}
+                    {overview.length ?
+                        <div className="overview">{overview}</div> :
+                        <div className="overview skeleton-overview" />}
+                </div>
 
+
+
+            </div>
 
         </div>
     )
