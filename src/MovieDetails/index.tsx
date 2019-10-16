@@ -3,6 +3,7 @@ import {RouteComponentProps} from "react-router";
 import './index.css';
 import StarRating from "../StarRating";
 import CastMember from "../CastMember";
+import {Link} from "react-router-dom";
 
 interface Movie {
     backdrop_path: string|null;
@@ -55,7 +56,7 @@ class MovieDetails extends React.Component<Props, State> {
         const {movie} = this.state;
         if (!movie) {
             return (
-                <div className="movie-detail">
+                <div className="movie-detail skeleton">
                     <div className="header">
                         <div className="poster skeleton"/>
                         <div className="right">
@@ -74,6 +75,7 @@ class MovieDetails extends React.Component<Props, State> {
             "en-US", { year: 'numeric', month: 'long', day: 'numeric' });
         return (
             <div className="movie-detail">
+                <Link to="/" className="home-link">{'< Home'}</Link>
                 <div className="header">
                     <img className="poster"
                          alt=""
