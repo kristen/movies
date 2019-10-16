@@ -1,0 +1,24 @@
+.cast-member {
+    --border-radius: 4px;
+    --movie-poster-width: 138px;
+    --movie-poster-height: 175px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: var(--movie-poster-width);
+}
+.cast-member .profile-image {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    height: var(--movie-poster-height);
+    width: var(--movie-poster-width);
+    background-color: #F4F4F4;
+}
+.cast-member .bottom {
+    padding: 10px;
+}
+.cast-member .actor-name {
+    font-weight: bold;
+}
+.cast-member .character-name {
+    font-size: 13px;
+}

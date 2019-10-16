@@ -1,0 +1,66 @@
+.movie-detail {
+    --movie-poster-width: 300px;
+    --max-content-width: 900px;
+    --skeleton-right-width: 500px;
+    --background-gradient: linear-gradient(90deg, #F4F4F4 0px, rgba(229, 229, 229, 0.8) 40px, #F4F4F4 80px);
+    --skeleton-animation: shine 2s infinite ease-out;
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+}
+@keyframes shine {
+    0% {
+        background-position: - var(--skeleton-right-width);
+    }
+
+    40%, 100% {
+        background-position: var(--skeleton-right-width);
+    }
+}
+.movie-detail .header {
+    display: grid;
+    grid-template-columns: var(--movie-poster-width) calc(var(--max-content-width) - var(--movie-poster-width));
+    justify-content: center;
+}
+.movie-detail .header .right {
+    padding: 40px;
+}
+.movie-detail .header .title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 15px;
+}
+.movie-detail .cast-members {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.movie-detail .cast-member {
+    margin: 10px;
+}
+.movie-detail .skeleton {
+    background-image: var(--background-gradient);
+    animation: var(--skeleton-animation);
+}
+.movie-detail .poster.skeleton {
+    width: var(--movie-poster-width);
+    height: 450px;
+}
+.movie-detail .title.skeleton {
+    height: 49px;
+}
+.movie-detail .release-date.skeleton {
+    height: 20px;
+}
+.movie-detail .overview.skeleton {
+    height: 100px;
+}
+.movie-detail .runtime.skeleton {
+    height: 20px;
+}
+.movie-detail .genre.skeleton {
+    height: 20px;
+}
+.movie-detail .cast.skeleton {
+    margin-top: 20px;
+    height: 300px;
+}
