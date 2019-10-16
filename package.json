@@ -28,7 +28,7 @@
   "scripts": {
     "start": "react-scripts start",
     "server": "node server.js",
-    "run": "yarn build && yarn server",
+    "serve:app": "yarn build && yarn server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

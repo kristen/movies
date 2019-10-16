@@ -20,7 +20,7 @@ node -v
 
 In the project directory, you can run:
 
-### `yarn run`
+### `yarn serve:app`
 
 Builds the app and hosts the app at [http://localhost:3001](http://localhost:3001).
 
