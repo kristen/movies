@@ -8,6 +8,14 @@ cd movies
 yarn
 ```
 
+### Versions
+
+yarn -v
+1.9.2
+
+node -v
+12.10.0
+
 ## Available Scripts
 
 In the project directory, you can run:
