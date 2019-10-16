@@ -5,22 +5,15 @@ import {Link} from "react-router-dom";
 
 export interface MovieSummary {
     poster_path: string|null;
-    adult: boolean;
     overview: string;
     release_date: string;
-    genre_ids: string[];
     id: number;
-    original_title: string;
     title: string;
-    backdrop_path: string|null;
-    popularity: number;
-    vote_count: number;
-    video: boolean;
     vote_average: number;
 }
 
 const Movie: React.FC<MovieSummary> = ({id, poster_path, title, overview, release_date, vote_average}) => {
-    const releaseYear = (release_date.match(/^(\d{4})-\d{2}-\d{2}$/) || [, ""])[1];
+    const releaseYear = (release_date.match(/^(\d{4})-\d{2}-\d{2}$/) || ["", ""])[1];
     return (
         <div>
             <div className="movie-summary">
@@ -39,12 +32,15 @@ const Movie: React.FC<MovieSummary> = ({id, poster_path, title, overview, releas
                     {overview.length ?
                         <div className="overview">{overview}</div> :
                         <div className="overview skeleton-overview" />}
+                    {title.length ?
+                        <div className="movie-details-link">
+                            <Link to={`/movie/${id}`}>
+                                See details
+                            </Link>
+                        </div>:
+                        <div className="movie-details-link skeleton-movie-details-link" />}
                 </div>
-
-
-
             </div>
-
         </div>
     )
 };

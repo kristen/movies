@@ -1,8 +1,11 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  font: 14px 'Open Sans', sans-serif;
+  margin: 20px auto;
+  max-width: 1020px;
 }
-
+* {
+  box-sizing: border-box;
+}
 ol, ul {
   padding-left: 30px;
 }

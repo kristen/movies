@@ -17,7 +17,7 @@ app.get('/status', (req, res) => {
 const apiKey = '?api_key=75b9387059d3bb6140f868f1a4c771ac';
 const baseUrl = 'https://api.themoviedb.org/3';
 
-const MAX_OVERVIEW_SUMMARY_LENGTH = 300;
+const MAX_OVERVIEW_SUMMARY_LENGTH = 200;
 const trimOverview = movie => {
     const overview = movie.overview;
     const trimmedOverview = overview.length > MAX_OVERVIEW_SUMMARY_LENGTH ?
@@ -55,7 +55,7 @@ app.get('/search/movie', (req, res, next) => {
 
 app.get('/movie/:movieId', (req, res, next) => {
     console.log('params', req.params);
-    fetch(`${baseUrl}/movie/${req.params.movieId}/images${apiKey}`)
+    fetch(`${baseUrl}/movie/${req.params.movieId}${apiKey}&append_to_response=credits`)
         .then(res => res.json())
         .then(data => {
             res.send(data);

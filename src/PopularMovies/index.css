@@ -1,13 +1,8 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-}
-
 .popular-movies {
     display: inline-flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-between;
+}
+.popular-movies .movie-summary {
+    margin-bottom: 20px;
 }

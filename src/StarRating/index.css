@@ -1,7 +1,12 @@
 .star-rating {
     color: #ccc;
     position: relative;
+    font-size: 14px;
     width: 70px;
+}
+.star-rating.large {
+    font-size: 28px;
+    width: 141px;
 }
 .star-rating .fill-rating {
     color: #e7711b;
