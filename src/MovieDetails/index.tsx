@@ -43,7 +43,7 @@ class MovieDetails extends React.Component<Props, State> {
             movie: undefined,
         };
         const {match: {params: {movieId}}} = this.props;
-        fetch(`/movie/${movieId}`).then(response => response.json()).then(
+        fetch(`/api/movie/${movieId}`).then(response => response.json()).then(
             response => {
                 this.setState({
                     movie: response,
@@ -59,7 +59,7 @@ class MovieDetails extends React.Component<Props, State> {
                     <div className="header">
                         <div className="poster skeleton"/>
                         <div className="right">
-                            <h1 className="title skeleton"/>
+                            <div className="title skeleton"/>
                             <p className="release-date skeleton" />
                             <p className="overview skeleton"/>
                             <div className="runtime skeleton"/>

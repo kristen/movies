@@ -8,11 +8,12 @@ const App: React.FC = () => {
     return (
         <Router>
             <Switch>
-                <Route path="/movie/:movieId"
+                <Route path="/movie-details/:movieId"
                        component={MovieDetails}>
                 </Route>
-                <Route path="/search"
-                       component={SearchList} />
+                <Route path="/search-movie"
+                       component={SearchList}>
+                </Route>
                 <Route path="/">
                     <PopularMovies />
                 </Route>

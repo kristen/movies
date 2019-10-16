@@ -4,7 +4,7 @@ import './index.css';
 const SearchMovie: React.FC = () => {
     return (
         <div className="search-movie">
-            <form action="/search">
+            <form action="/search-movie">
                 <input type="text" placeholder="Search.." name="search"/>
                 <button type="submit">search</button>
             </form>

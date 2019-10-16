@@ -18,12 +18,14 @@ const Movie: React.FC<MovieSummary> = ({id, poster_path, title, overview, releas
         <div>
             <div className="movie-summary">
                 {poster_path ?
-                    <img className="poster" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${poster_path}`} alt=""/> :
+                    <img className="poster"
+                         alt=""
+                         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${poster_path}`} /> :
                     <div className="poster skeleton-poster"/>}
                 <div className="right">
                     {title.length ?
                         <div className="title">
-                            <Link to={`/movie/${id}`}>
+                            <Link to={`/movie-details/${id}`}>
                                 {title} <span className="release-year">({releaseYear})</span>
                             </Link>
                         </div> :
@@ -34,7 +36,7 @@ const Movie: React.FC<MovieSummary> = ({id, poster_path, title, overview, releas
                         <div className="overview skeleton-overview" />}
                     {title.length ?
                         <div className="movie-details-link">
-                            <Link to={`/movie/${id}`}>
+                            <Link to={`/movie-details/${id}`}>
                                 See details
                             </Link>
                         </div>:

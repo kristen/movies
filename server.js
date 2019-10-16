@@ -6,10 +6,6 @@ const port = 3001;
 const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
 app.get('/status', (req, res) => {
     return res.send('OK');
 });
@@ -31,7 +27,7 @@ const mapSummaryResponse = data => {
     return {...data, results: updatedResults};
 };
 
-app.get('/movies/popular', (req, res, next) => {
+app.get('/api/movies/popular', (req, res, next) => {
     fetch(`${baseUrl}/movie/popular${apiKey}`)
         .then(res => res.json())
         .then(data => {
@@ -42,7 +38,7 @@ app.get('/movies/popular', (req, res, next) => {
         });
 });
 
-app.get('/search/movie', (req, res, next) => {
+app.get('/api/search/movie', (req, res, next) => {
     fetch(`${baseUrl}/search/movie${apiKey}&query=${req.query.search}`)
         .then(res => res.json())
         .then(data => {
@@ -53,7 +49,7 @@ app.get('/search/movie', (req, res, next) => {
         });
 });
 
-app.get('/movie/:movieId', (req, res, next) => {
+app.get('/api/movie/:movieId', (req, res, next) => {
     fetch(`${baseUrl}/movie/${req.params.movieId}${apiKey}&append_to_response=credits`)
         .then(res => res.json())
         .then(data => {
@@ -62,6 +58,10 @@ app.get('/movie/:movieId', (req, res, next) => {
         .catch(err => {
             next(err);
         });
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(port, () => console.log(`listening on port ${port}`));

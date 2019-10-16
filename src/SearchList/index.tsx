@@ -16,7 +16,7 @@ class SearchList extends React.Component<Props, State> {
         console.log(props);
         const {location: {search}} = this.props;
         this.state = { movies: undefined };
-        fetch(`/search/movie${search}`).then(response => response.json()).then(
+        fetch(`/api/search/movie${search}`).then(response => response.json()).then(
             response => {
                 this.setState({
                     movies: response.results,

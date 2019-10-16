@@ -13,7 +13,7 @@ class PopularMovies extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = { movies: undefined };
-        fetch('/movies/popular').then(response => response.json()).then(
+        fetch('/api/movies/popular').then(response => response.json()).then(
             response => {
                 this.setState({
                     movies: response.results,
