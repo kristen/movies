@@ -1,8 +1,8 @@
-.popular-movies {
+.movie-list {
     display: inline-flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
-.popular-movies .movie-summary {
+.movie-list .movie-summary {
     margin-bottom: 20px;
 }
