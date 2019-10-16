@@ -46,7 +46,7 @@ app.get('/search/movie', (req, res, next) => {
     fetch(`${baseUrl}/search/movie${apiKey}&query=${req.query.search}`)
         .then(res => res.json())
         .then(data => {
-            res.send(data);
+            res.send(mapSummaryResponse(data));
         })
         .catch(err => {
             next(err);
@@ -54,7 +54,6 @@ app.get('/search/movie', (req, res, next) => {
 });
 
 app.get('/movie/:movieId', (req, res, next) => {
-    console.log('params', req.params);
     fetch(`${baseUrl}/movie/${req.params.movieId}${apiKey}&append_to_response=credits`)
         .then(res => res.json())
         .then(data => {

@@ -1,19 +1,22 @@
 import React from 'react';
 import {MovieSummary} from "../Movie";
 import MovieList from "../MovieList";
+import {RouteComponentProps} from "react-router";
 import SearchMovie from "../SearchMovie";
 
-interface Props {}
+type Props = RouteComponentProps<{}>;
 
 interface State {
     movies?: MovieSummary[];
 }
 
-class PopularMovies extends React.Component<Props, State> {
+class SearchList extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
+        console.log(props);
+        const {location: {search}} = this.props;
         this.state = { movies: undefined };
-        fetch('/movies/popular').then(response => response.json()).then(
+        fetch(`/search/movie${search}`).then(response => response.json()).then(
             response => {
                 this.setState({
                     movies: response.results,
@@ -25,11 +28,11 @@ class PopularMovies extends React.Component<Props, State> {
         return (
             <div>
                 <SearchMovie />
-                <h1>Popular Movies</h1>
+                <h1>Movie Search Results</h1>
                 <MovieList movies={this.state.movies} />
             </div>
         )
     }
 }
 
-export default PopularMovies;
+export default SearchList;
