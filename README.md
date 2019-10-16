@@ -40,3 +40,6 @@ for any host, on any OS. TypeScript compiles to readable, standards-based JavaSc
 - [ ] Consider making search page ajax request instead of form submit
 - [ ] Make components smaller (i.e. skeleton loaders could be separate components)
 - [ ] Clean up styles (some styles are repeated)
+- [ ] Add actor detail page
+
+* style inspiration from [The Movie DB](https://www.themoviedb.org/movie)
