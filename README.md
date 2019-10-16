@@ -42,5 +42,6 @@ for any host, on any OS. TypeScript compiles to readable, standards-based JavaSc
 - [ ] Clean up styles (some styles are repeated)
 - [ ] Add actor detail page
 - [ ] Add caching layer for the movie db api calls
+- [ ] Handle api key securely
 
 * style inspiration from [The Movie DB](https://www.themoviedb.org/movie)
