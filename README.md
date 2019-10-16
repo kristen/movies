@@ -31,3 +31,12 @@ Builds the app and hosts the app at [http://localhost:3001](http://localhost:300
 [TypeScript](https://github.com/microsoft/TypeScript) is a language for application-scale JavaScript.
 TypeScript adds optional types to JavaScript that support tools for large-scale JavaScript applications for any browser,
 for any host, on any OS. TypeScript compiles to readable, standards-based JavaScript.
+
+### TODO
+
+- [ ] Add test
+- [ ] Make mobile responsive
+- [ ] Build out movie details page
+- [ ] Consider making search page ajax request instead of form submit
+- [ ] Make components smaller (i.e. skeleton loaders could be separate components)
+- [ ] Clean up styles (some styles are repeated)
